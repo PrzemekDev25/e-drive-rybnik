@@ -451,15 +451,18 @@ button {
 }
 
 @media (max-width: 600px) {
-    .info-cards {
-        grid-template-columns: 1fr;
+    .pricing .info-cards {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+
+    .pricing .info-cards .card {
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .price-list li {
         font-size: 0.95rem;
-    }
-
-    .pricing {
-        padding: 20px 15px;
     }
 }
