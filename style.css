@@ -449,3 +449,17 @@ a.button,
 button {
     color: #000000 !important;
 }
+
+@media (max-width: 600px) {
+    .info-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .price-list li {
+        font-size: 0.95rem;
+    }
+
+    .pricing {
+        padding: 20px 15px;
+    }
+}
