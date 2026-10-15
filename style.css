@@ -1,0 +1,406 @@
+/* =================================
+    1. USTAWIENIA GLOBALNE
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-bg: #111214;
+    --color-surface: #1c1e22;
+    --color-text: #f5f5f5;
+    --color-muted: #b5b5b5;
+    --color-accent: #f5c518;
+    --color-dark: #111214;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+section {
+    padding: 80px 8%;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+p {
+    color: var(--color-muted);
+}
+
+
+/* =================================
+    2. NAGŁÓWEK I MENU
+================================= */
+
+header {
+    background-color: #18191c;
+    border-bottom: 1px solid #303136;
+}
+
+nav {
+    min-height: 80px;
+    padding: 16px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav ul a {
+    color: var(--color-muted);
+    transition: color 0.2s;
+}
+
+nav ul a:hover {
+    color: var(--color-accent);
+}
+
+
+/* =================================
+    3. PRZYCISKI
+================================= */
+
+.button {
+    display: inline-block;
+    padding: 14px 24px;
+
+    background: linear-gradient(
+        135deg,
+        #ffe066,
+        var(--color-accent)
+    );
+
+    color: var(--color-dark);
+    font-weight: 800;
+    border: 2px solid var(--color-accent);
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(245, 197, 24, 0.2);
+}
+
+.button:active {
+    transform: translateY(0);
+}
+
+.button:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 4px;
+}
+
+
+/* =================================
+    4. SEKCJA POWITALNA
+================================= */
+
+.hero {
+    min-height: 560px;
+    padding: 110px 8%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 22px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(17, 18, 20, 0.95) 0%,
+            rgba(17, 18, 20, 0.70) 55%,
+            rgba(17, 18, 20, 0.25) 100%
+        ),
+        url("images/tor.jpg") center / cover no-repeat;
+}
+
+.hero-label {
+    color: var(--color-accent);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    max-width: 750px;
+    font-size: clamp(2.5rem, 6vw, 4.8rem);
+    font-weight: 900;
+}
+
+.hero > p:not(.hero-label) {
+    max-width: 580px;
+    font-size: 1.1rem;
+}
+
+
+/* =================================
+    5. KARTY INFORMACJI
+================================= */
+
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 35px;
+}
+
+.card {
+    padding: 20px;
+    background-color: var(--color-surface);
+    border: 1px solid #303136;
+    border-radius: 12px;
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-accent);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.card h3 {
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+}
+
+.card p {
+    margin-bottom: 20px;
+}
+
+.card a {
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+
+/* =================================
+    6. KONTAKT
+================================= */
+
+#kontakt {
+    background-color: #191a1e;
+}
+
+#kontakt p {
+    margin-bottom: 10px;
+}
+
+#kontakt a:not(.button) {
+    color: var(--color-accent);
+}
+
+
+/* =================================
+    7. STOPKA
+================================= */
+
+footer {
+    padding: 30px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-top: 1px solid #303136;
+}
+
+footer a {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+}
+
+footer a:hover {
+    color: var(--color-accent);
+}
+
+
+/* =================================
+    8. TELEFONY I TABLETY
+================================= */
+
+@media (max-width: 900px) {
+    nav {
+        flex-wrap: wrap;
+    }
+
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .info-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        padding: 20px 6%;
+        gap: 18px;
+    }
+
+    nav ul {
+        width: 100%;
+        gap: 12px 18px;
+    }
+
+    nav ul a {
+        font-size: 0.9rem;
+    }
+
+    nav > .button {
+        width: 100%;
+    }
+
+    .hero {
+        min-height: 400px;
+        padding: 75px 6%;
+    }
+
+    .hero h1 {
+        font-size: 2.6rem;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+
+    .info-card {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        padding: 25px 6%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Przycisk menu - domyślnie ukryty na komputerach */
+.menu-toggle {
+    display: none;
+    padding: 10px 14px;
+    background: transparent;
+    color: var(--color-text);
+    border: 1px solid #45464b;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Nawigacja na telefonach */
+@media (max-width: 600px) {
+    nav {
+        position: relative;
+        padding: 20px 6%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 16px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul.nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        order: 3;
+    }
+
+    nav ul.nav-links.is-open {
+        display: flex;
+    }
+
+    nav ul.nav-links li {
+        width: 100%;
+    }
+
+    nav ul.nav-links a {
+        display: block;
+        width: 100%;
+        padding: 12px 0;
+    }
+
+    nav > .button {
+        width: 100%;
+        order: 4;
+    }
+}
+
+/* TEST MENU */
+@media (max-width: 600px) {
+    nav ul.nav-links.is-open {
+        display: flex !important;
+        flex-direction: column;
+        width: 100%;
+        background-color: #1c1e22;
+        padding: 15px;
+    }
+}
+
+/* Zdjęcia w kartach */
+.card img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
