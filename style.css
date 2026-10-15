@@ -404,3 +404,48 @@ footer a:hover {
     border-radius: 8px;
     margin-bottom: 20px;
 }
+
+/* CENNIK */
+
+.pricing-intro {
+    margin-bottom: 30px;
+}
+
+.price-list {
+    list-style: none;
+    margin: 22px 0;
+}
+
+.price-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #383a40;
+}
+
+.price-list strong {
+    color: var(--color-accent);
+    white-space: nowrap;
+    font-size: 1.1rem;
+}
+
+.price-list + .button {
+    margin-top: 8px;
+}
+
+.passes-heading {
+    margin-top: 55px;
+}
+
+.pricing-note {
+    margin: 30px 0 15px;
+    font-size: 0.95rem;
+}
+
+.button,
+a.button,
+button {
+    color: #000000 !important;
+}
